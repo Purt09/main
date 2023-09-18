@@ -1,0 +1,10 @@
+doctrine_migrations:
+    migrations_paths:
+        # namespace is arbitrary but should be different from App\Migrations
+        # as Migrations classes should NOT be autoloaded
+        'App\Shared\Infrastructure\Migrations': '%kernel.project_dir%/src/Shared/Infrastructure/Migrations'
+    enable_profiler: false
+#    storage:
+#        # default (sql table) metadata storage configuration
+#        table_storage:
+#            table_name: 'migration_versions'

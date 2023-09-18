@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="9de287e2-8fa3-4f48-a7a4-13864d0c3c02" name="mariadb@localhost Mapping">
+      <data-sources db="e80cf701-b6bd-49ea-be43-0ec27a10b68c" />
+      <scope>
+        <node negative="1">
+          <node kind="database" negative="1" />
+          <node kind="database" qname="@">
+            <node kind="schema" negative="1" />
+          </node>
+          <node kind="schema">
+            <name qname="information_schema" />
+            <name qname="mariadb" />
+          </node>
+        </node>
+      </scope>
+    </mapping>
+  </component>
+</project>
