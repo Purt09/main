@@ -2,22 +2,15 @@
 
 namespace App\Tokens\Domain\Repository;
 
-
 use App\Tokens\Domain\Entity\RefreshBotUserToken;
 
 interface RefreshBotUserTokenRepositoryInterface
 {
-    /**
-     * Создает токен
-     *
-     * @param RefreshBotUserToken $user
-     * @return void
-     */
-    public function add(RefreshBotUserToken $user): void;
+    public function save(RefreshBotUserToken $token): void;
 
-    /**
-     * @param string $token
-     * @return RefreshBotUserToken|null
-     */
+    public function add(RefreshBotUserToken $token): void;
+
+    public function remove(RefreshBotUserToken $token): void;
+
     public function findByToken(string $token): ?RefreshBotUserToken;
 }

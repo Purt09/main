@@ -14,9 +14,20 @@ class RefreshBotUserTokenRepository extends ServiceEntityRepository implements R
         parent::__construct($registry, RefreshBotUserToken::class);
     }
 
-    public function add(RefreshBotUserToken $user): void
+    public function save(RefreshBotUserToken $token): void
     {
-        $this->_em->persist($user);
+        $this->_em->persist($token);
+    }
+
+    public function add(RefreshBotUserToken $token): void
+    {
+        $this->_em->persist($token);
+        $this->_em->flush();
+    }
+
+    public function remove(RefreshBotUserToken $token): void
+    {
+        $this->_em->remove($token);
         $this->_em->flush();
     }
 

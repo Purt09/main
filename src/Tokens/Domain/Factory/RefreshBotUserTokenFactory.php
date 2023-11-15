@@ -4,22 +4,25 @@ namespace App\Tokens\Domain\Factory;
 
 use App\Shared\Domain\Service\StringService;
 use App\Tokens\Domain\Entity\RefreshBotUserToken;
-use function Symfony\Component\DependencyInjection\Loader\Configurator\env;
 
 class RefreshBotUserTokenFactory
 {
     public function create(
-        int     $user_id,
+        int $user_id,
+        int $bot_id,
         string $ip,
-    ): RefreshBotUserToken
-    {
-        $refresh_at = time() + 24 * 60 * 60;
+        string $user_agent,
+        int $created_at = null
+    ): RefreshBotUserToken {
         $token = new RefreshBotUserToken(
-            $refresh_at,
             StringService::generateString(null, 64),
             $user_id,
-            $ip
+            $ip,
+            $bot_id,
+            $user_agent,
+            $created_at
         );
+
         return $token;
     }
 }

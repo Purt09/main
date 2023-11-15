@@ -2,17 +2,16 @@
                   xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                           https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-
     <entity name="App\Tokens\Domain\Entity\RefreshBotUserToken" table="bot_user_token">
         <id name="id" type="string" length="26">
             <generator strategy="NONE"/>
         </id>
         <field name="created_at" type="integer"/>
-        <field name="refresh_at" type="integer"/>
+        <field name="refresh_at" type="integer" nullable="true"/>
         <field name="token" length="64" unique="true"/>
         <field name="user_id" type="integer"/>
+        <field name="bot_id" type="integer"/>
         <field name="ip" length="255"/>
+        <field name="user_agent" length="1000"/>
     </entity>
-
-
 </doctrine-mapping>

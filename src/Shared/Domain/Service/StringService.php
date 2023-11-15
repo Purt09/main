@@ -4,17 +4,20 @@ namespace App\Shared\Domain\Service;
 
 class StringService
 {
-    const CHARTS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    public const CHARTS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
     public static function generateString(?string $input = self::CHARTS, int $strength = 16): string
     {
-        if(is_null($input))
+        if (is_null($input)) {
             $input = self::CHARTS;
+        }
         $input_length = strlen($input);
         $random_string = '';
-        for($i = 0; $i < $strength; $i++) {
+        for ($i = 0; $i < $strength; ++$i) {
             $random_character = $input[mt_rand(0, $input_length - 1)];
             $random_string .= $random_character;
         }
+
         return $random_string;
     }
 }

@@ -18,6 +18,11 @@ framework:
     php_errors:
         log: true
 
+#    error_controller: App\Shared\Infrastructure\Controller\ErrorController::show
+
+parameters:
+    REFRESH_BOT_USER_DAYS_LIFE: '%env(REFRESH_BOT_USER_DAYS_LIFE)%'
+
 when@test:
     framework:
         test: true

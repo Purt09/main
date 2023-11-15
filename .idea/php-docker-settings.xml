@@ -21,6 +21,7 @@
         <entry key="6ec2a11b-ca85-4c1f-8cc3-ee84352d70d1">
           <value>
             <DockerContainerSettings>
+              <option name="networkMode" value="bott_default" />
               <option name="runCliOptions" value="" />
               <option name="version" value="1" />
               <option name="volumeBindings">

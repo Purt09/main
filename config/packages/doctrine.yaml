@@ -21,12 +21,6 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
-            TokenUserRefresh:
-                is_bundle: false
-                type: xml
-                dir: '%kernel.project_dir%/src/Tokens/Infrastructure/Database/ORM'
-                prefix: 'App\Tokens\Domain\Entity'
-                alias: TokenUser
             TokenBotUserRefresh:
                 is_bundle: false
                 type: xml

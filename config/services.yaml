@@ -16,6 +16,10 @@ services:
     App\:
         resource: '../src/'
 
+    App\Core\EventListener\ExceptionListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
+
     _instanceof:
         App\Shared\Application\Command\CommandHandlerInterface:
             tags:
@@ -24,7 +28,3 @@ services:
         App\Shared\Application\Query\QueryHandlerInterface:
             tags:
                 - { name: messenger.message_handler, bus: query.bus }
-
-#        App\Shared\Domain\Event\EventHandlerInterface:
-#            tags:
-#                - { name: messenger.message_handler, bus: event.bus }
