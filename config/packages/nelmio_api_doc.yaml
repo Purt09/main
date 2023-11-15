@@ -1,0 +1,17 @@
+nelmio_api_doc:
+    documentation:
+        servers:
+            - url: https://auth.bot-t.com/
+              description: API over HTTPS
+        info:
+            title: Auth BOT-T
+            description: Service for auth users in BOT-T services
+            version: 1.0.0
+            contact:
+                name: API Support
+                url: https://t.me/BOTTRU
+                email: support@bot-t.com
+
+    areas:
+        path_patterns:
+            - ^/api/v1(?!/doc$)
